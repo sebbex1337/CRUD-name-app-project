@@ -5,10 +5,11 @@ window.addEventListener("load", initApp);
 const ENDPOINT = "https://crud-app-group-project-default-rtdb.europe-west1.firebasedatabase.app/";
 
 async function initApp() {
-	console.log("Running");
 	const users = await getUsers(`${ENDPOINT}/users.json`);
-	console.log(users);
-	/* createUser("", "Sebastian Juel Sefort", 24); */
+	for (const user of users) {
+		displayUser(user);
+	}
+	/* createUser("https://images.unsplash.com/photo-1642049888276-9c9f0a1a8758?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHwyfHx8fHx8Mnx8MTY0MjA3NTAwMQ&ixlib=rb-1.2.1&q=80&w=400", "Test", 99); */
 }
 
 async function getUsers(url) {
@@ -48,4 +49,17 @@ async function updateUser(id, image, name, age) {
 	});
 	const data = response.json();
 	console.log(data);
+}
+
+function displayUser(user) {
+	document.querySelector("#users").insertAdjacentHTML(
+		"beforeend",
+		/*html*/ `
+		<article class="grid-item">
+			<img src="${user.image}">
+			<h2>${user.name}</h2>
+			<p>Age: ${user.age}</p>
+		</article>
+	`
+	);
 }
