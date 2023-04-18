@@ -5,9 +5,29 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css" />
-		<title>Document</title>
+		<title>CRUD-APP</title>
 	</head>
 	<body>
+		<header>
+			<h1>CRUD-APP</h1>
+		</header>
+		<section class="tools-grid">
+			<label for="sort-by"
+				>Sort by:
+				<select id="sort-by">
+					<option value="" selected disabled>Choose here</option>
+					<option value="name">Name</option>
+				</select>
+			</label>
+			<section></section>
+			<input id="search" type="search" placeholder="Search" />
+		</section>
+		<main>
+			<section id="users" class="grid-container"></section>
+		</main>
+		<footer>
+			<h2>By Sebbex1337</h2>
+		</footer>
 		<script src="app.js"></script>
 	</body>
 </html>
