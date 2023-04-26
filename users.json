@@ -1,9 +1,18 @@
 {
 	"users": {
 		"01": {
-			"image": "",
-			"name": "",
-			"age": ""
+			"image": "https://v1.padlet.pics/1/image.webp?t=c_limit%2Cdpr_2%2Ch_785%2Cw_588&url=https%3A%2F%2Fstorage.googleapis.com%2Fpadlet-uploads%2F1949096038%2Fb429206be2735e283868dd434e8f2627%2F324725019_1264564317432916_4374899911080602467_n.jpg%3FExpires%3D1682903007%26GoogleAccessId%3D778043051564-q79bsd8mc40b0bl82ikkrtc3jdofe4dg%2540developer.gserviceaccount.com%26Signature%3Dk19Orgjtgi6Ugn%252Bs9Iedm%252FiVEPJ5sKRlRKX46ipdfOxzSorR7e7kGGdc0ZmSXpCHaUij9SILdBbz1r99cccfCTsQpiRZNvIioPeGemi69ZLgfqbs9eX2R7OprukjwwnTb9DZQFMagtUNyh51tqCRo798e89f31qNLS%252FHDdoOaew%253D%26original-url%3Dhttps%253A%252F%252Fpadlet-uploads.storage.googleapis.com%252F1949096038%252Fb429206be2735e283868dd434e8f2627%252F324725019_1264564317432916_4374899911080602467_n.jpg",
+			"name": "Sebastian Juel Sefort",
+			"age": "24",
+			"gender": "Male",
+			"role": "Creator",
+			"mail": "test@test.dk",
+			"team": "V2",
+			"city": "København K",
+			"meal": "Lasagne",
+			"fun_fact": "Drikker alt for meget Faxe Kondi",
+			"operatingSystem": "Windows",
+			"pineapple": "Yes"
 		}
 	}
 }
