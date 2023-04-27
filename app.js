@@ -97,3 +97,4 @@ console.log(youBitch);
 console.log("Hej");
 
 console.log("1");
+console.log("2");
