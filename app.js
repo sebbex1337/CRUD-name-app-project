@@ -50,8 +50,9 @@ async function createUser(image, name, age, gender, role, mail, team, city, meal
 		method: "POST",
 		body: userAsJson,
 	});
-	const data = await response.json();
-	console.log("User created " + data);
+	if (response.ok) {
+		updateUsersGrid();
+	}
 }
 
 async function updateUser(id, image, name, age, gender, role, mail, team, city, meal, fun_fact, operatingSystem, pineapple) {
@@ -61,8 +62,9 @@ async function updateUser(id, image, name, age, gender, role, mail, team, city, 
 		method: "PUT",
 		body: userAsJson,
 	});
-	const data = response.json();
-	console.log(data);
+	if (response.ok) {
+		updateUsersGrid();
+	}
 }
 
 async function deleteUser(id) {
