@@ -95,3 +95,5 @@ function displayUsers(users) {
 
 console.log(youBitch);
 console.log("Hej");
+
+console.log("1");
