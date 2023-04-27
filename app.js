@@ -92,3 +92,4 @@ function displayUsers(users) {
 		);
 	}
 }
+console.log("Hej");
