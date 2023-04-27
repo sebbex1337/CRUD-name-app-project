@@ -92,3 +92,5 @@ function displayUsers(users) {
 		);
 	}
 }
+
+console.log(youBitch);
