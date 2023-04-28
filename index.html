@@ -10,6 +10,7 @@
 	<body>
 		<header>
 			<h1>CRUD-APP</h1>
+			<button id="createUser">Create new user</button>
 		</header>
 		<section class="tools-grid">
 			<label for="sort-by" id="sort-by-label"
@@ -19,7 +20,6 @@
 					<option value="name">Name</option>
 				</select>
 			</label>
-			<button id="createUser">Create new user</button>
 			<input id="search" type="search" placeholder="Search" />
 		</section>
 		<main>
@@ -29,7 +29,7 @@
 			<h2>By Sebbex1337</h2>
 		</footer>
 
-		<dialog id="dialog-create-user" open>
+		<dialog id="dialog-create-user">
 			<h2>Create new user</h2>
 			<form id="form-create-new-user">
 				<section class="form-create-user-grid">
@@ -50,17 +50,26 @@
 							>Gender:
 							<input type="text" name="gender" id="form-create-gender" placeholder="Enter gender" />
 						</label>
-						<label for="role"
+						<label for="role_select"
 							>Role:
-							<input type="text" name="role" id="form-create-role" placeholder="Enter role" />
+							<select id="role_select">
+								<option value="" disabled selected>Choose here</option>
+								<option value="Student">Student</option>
+								<option value="Lecturer">Lecturer</option>
+								<option value="Creator">Creator</option>
+							</select>
 						</label>
 						<label for="mail"
 							>Mail:
 							<input type="text" name="mail" id="form-create-mail" placeholder="Enter mail" />
 						</label>
-						<label for="team"
+						<label for="team_select"
 							>Team:
-							<input type="text" name="team" id="form-create-team" placeholder="Enter team" />
+							<select id="team_select">
+								<option value="" disabled selected>Choose here</option>
+								<option value="V1">V1</option>
+								<option value="V2">V2</option>
+							</select>
 						</label>
 						<label for="city"
 							>City:
@@ -79,15 +88,15 @@
 						<h2>Operating System</h2>
 						<label for="operatingSystemWindows"
 							>Windows:
-							<input type="radio" name="operatingSystem" id="form-create-operatingSystemWindows" />
+							<input type="radio" name="operatingSystem" id="form-create-operatingSystemWindows" value="Windows" selected />
 						</label>
 						<label for="operatingSystemMac"
 							>Mac:
-							<input type="radio" name="operatingSystem" id="form-create-operatingSystemMac" />
+							<input type="radio" name="operatingSystem" id="form-create-operatingSystemMac" value="Mac" />
 						</label>
 						<label for="operatingSystemLinux"
 							>Linux:
-							<input type="radio" name="operatingSystem" id="form-create-operatingSystemLinux" />
+							<input type="radio" name="operatingSystem" id="form-create-operatingSystemLinux" value="Linux" />
 						</label>
 						<h2>Pinapple on pizza:</h2>
 						<label for="pineappleYes"
