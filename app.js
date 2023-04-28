@@ -8,13 +8,17 @@ let users;
 function initApp() {
 	updateUsersGrid();
 
-	document.querySelector("#createUser").addEventListener("click", createUserClicked);
+	document.querySelector("#createUser").addEventListener("click", showCreateUserDialog);
 }
 
 /* Event functions */
 
-function createUserClicked() {
+function showCreateUserDialog() {
 	document.querySelector("#dialog-create-user").showModal();
+}
+
+function createUserClicked(event) {
+	event.preventDefault();
 }
 
 /* Get users functions */
@@ -92,4 +96,3 @@ function displayUsers(users) {
 		);
 	}
 }
-console.log("Hej");

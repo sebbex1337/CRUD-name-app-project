@@ -1,0 +1,47 @@
+#dialog-create-user {
+	width: 65vw;
+	padding: 2em 1em;
+}
+
+.form-create-user-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+#form-create-btns {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 3em;
+	padding-top: 2em;
+}
+
+#submit-btn {
+	background-color: rgb(23, 165, 23);
+	margin-left: auto;
+}
+
+#reset-btn {
+	background-color: red;
+	margin-right: auto;
+}
+
+.input-btns-styling {
+	cursor: pointer;
+	font-size: 1em;
+	text-align: center;
+	border: 2px solid green;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	padding: 0.5em 1em;
+	width: 100%;
+	max-width: 380px;
+}
+
+form h2 {
+	text-align: start;
+}
+
+#form-create-user-info {
+	display: flex;
+	flex-direction: column;
+}
