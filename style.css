@@ -107,6 +107,7 @@ button {
 #dialog-create-user {
 	width: 55vw;
 	padding: 0 1em 2em 1em;
+	background-color: #868686;
 }
 
 .form-create-user-grid {
