@@ -9,6 +9,7 @@ function initApp() {
 	updateUsersGrid();
 
 	document.querySelector("#createUser").addEventListener("click", showCreateUserDialog);
+	document.querySelector("#form-delete-user").addEventListener("submit", deleteUserClicked);
 }
 
 /* Event functions */
@@ -90,6 +91,7 @@ async function updateUser(id, image, name, age, gender, role, mail, team, city, 
 
 async function deleteUser(id) {
 	const response = await fetch(`${ENDPOINT}/users/${id}.json`, { method: "DELETE" });
+	console.log(response);
 	if (response.ok) {
 		updateUsersGrid();
 	}
@@ -128,9 +130,17 @@ function displayUser(user) {
 
 	function deleteClicked() {
 		console.log("Delete button clicked");
+		document.querySelector("#dialog-delete-user-title").textContent = user.name;
+		document.querySelector("#form-delete-user").setAttribute("data-id", user.id);
+		document.querySelector("#dialog-delete-user").showModal();
 	}
 
 	function updateClicked() {
 		console.log("Update button clicked");
 	}
+}
+
+function deleteUserClicked(event) {
+	const id = event.target.getAttribute("data-id");
+	deleteUser(id);
 }
