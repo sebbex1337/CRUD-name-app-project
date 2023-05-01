@@ -9,6 +9,9 @@ function initApp() {
 	updateUsersGrid();
 
 	document.querySelector("#createUser").addEventListener("click", showCreateUserDialog);
+	document.querySelector("#sort-by").addEventListener("change", sortByChanged);
+	document.querySelector("#filter-by").addEventListener("change", filterByChanged);
+	
 }
 
 /* Event functions */
@@ -133,4 +136,36 @@ function displayUser(user) {
 	function updateClicked() {
 		console.log("Update button clicked");
 	}
+}
+
+//sortering// 
+
+function sortUsers(sortBy) {
+    if (sortBy === "name") {
+        return users.sort((userA, userB) => userA.name > userB.name);
+    }
+    if (sortBy === "age") {
+        return users.sort((userA, userB) => userA.age > userB.age);
+    }
+    if (sortBy === "role") {
+        return users.sort((userA, userB) => userA.role > userB.role);
+    }
+    if (sortBy === "team") {
+        return users.sort((userA, userB) => userA.team> userB.team);
+    }
+}
+
+function sortByChanged(event) {
+	const selectedValue = event.target.value;
+	console.log(selectedValue);
+	displayUsers(sortUsers(selectedValue));
+}
+
+function filterUsers(filterBy) {
+	return users.filter(user => user.team === filterBy);
+}
+
+function filterByChanged(event) {
+	const selectedValue = event.target.value;
+	displayUsers(filterUsers(selectedValue));
 }
