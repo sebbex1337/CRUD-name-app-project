@@ -7,9 +7,14 @@ body {
 header {
 	background-color: rgb(0, 117, 108);
 	padding: 0.5em 0 0.5em 0;
+	text-align: center;
 }
 
 h1 {
+	text-align: center;
+}
+
+h2 {
 	text-align: center;
 }
 
@@ -24,8 +29,15 @@ main {
 }
 
 button {
-	padding: 0.5em 0 0.5em 0;
-	margin: 0.5em 2em 0.5em 2em;
+	cursor: pointer;
+	font-size: 1em;
+	text-align: center;
+	border: 2px solid black;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	padding: 0.5em 1em;
+	width: 100%;
+	max-width: 380px;
 }
 
 #sort-by-label {
@@ -69,7 +81,7 @@ button {
 
 .grid-item img {
 	width: 100%;
-	height: 400px;
+	height: 500px;
 	background-color: rgb(255, 255, 255);
 }
 
@@ -91,81 +103,73 @@ button {
 	gap: 1em;
 }
 
-/* Dialog styling from chatGPT */
-/* Dialog */
+/* Dialog styling */
 #dialog-create-user {
-	width: 80%;
-	max-width: 800px;
+	width: 55vw;
+	padding: 0 1em 2em 1em;
+	background-color: #868686;
 }
 
-/* Form */
-#form-create-new-user {
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
-	padding: 16px;
-	background-color: #f2f2f2;
+.form-create-user-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 }
 
-/* Form sections */
-#form-create-user-info {
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
-}
-
-/* Form labels */
-label {
-	display: flex;
-	flex-direction: column;
-	gap: 4px;
-}
-
-/* Form inputs */
-input[type="text"],
-input[type="number"] {
-	padding: 4px;
-	border-radius: 4px;
-	border: none;
-	background-color: white;
-}
-
-/* Submit and reset buttons */
-#submit-btn,
-#reset-btn {
-	padding: 8px;
-	border-radius: 4px;
-	border: none;
-	font-weight: bold;
-	cursor: pointer;
-	transition: background-color 0.2s ease-in-out;
+#form-create-btns {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 3em;
+	padding-top: 2em;
 }
 
 #submit-btn {
-	background-color: #28a745;
-	color: white;
+	background-color: rgb(23, 165, 23);
+	margin-left: auto;
 }
 
 #reset-btn {
-	background-color: #dc3545;
-	color: white;
+	background-color: red;
+	margin-right: auto;
 }
 
-#submit-btn:hover,
-#reset-btn:hover {
-	background-color: #218838;
+.input-btns-styling {
+	cursor: pointer;
+	font-size: 1em;
+	text-align: center;
+	border: 2px solid black;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	padding: 0.5em 1em;
+	width: 100%;
+	max-width: 380px;
 }
 
-/* Radio buttons */
-input[type="radio"] {
-	margin-left: 8px;
-	margin-right: 4px;
+form h2 {
+	text-align: start;
 }
 
-/* Radio button labels */
-label[for^="operatingSystem"],
-label[for^="pineapple"] {
-	display: inline-flex;
-	align-items: center;
-	gap: 4px;
+#form-create-user-info {
+	display: flex;
+	flex-direction: column;
+}
+
+#form-create-user-info label {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	font-weight: bold;
+}
+
+#form-create-new-user input[type="text"],
+#form-create-new-user input[type="number"],
+#form-create-new-user input[type="url"] {
+	width: 100%;
+	padding: 10px;
+	margin-top: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+#form-create-options-section {
+	margin-left: 3em;
 }

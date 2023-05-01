@@ -10,6 +10,7 @@
 	<body>
 		<header>
 			<h1>CRUD-APP</h1>
+			<button id="createUser">Create new user</button>
 		</header>
 		<section class="tools-grid">
 			<label for="sort-by" id="sort-by-label"
@@ -19,7 +20,6 @@
 					<option value="name">Name</option>
 				</select>
 			</label>
-			<button id="createUser">Create new user</button>
 			<input id="search" type="search" placeholder="Search" />
 		</section>
 		<main>
@@ -32,77 +32,86 @@
 		<dialog id="dialog-create-user">
 			<h2>Create new user</h2>
 			<form id="form-create-new-user">
-				<section id="form-create-user-info">
-					<label for="name"
-						>Name:
-						<input type="text" name="name" id="form-create-name" placeholder="Name" />
-					</label>
-					<label for="image"
-						>Image:
-						<input type="url" name="image" id="form-create-image" placeholder="Image" />
-					</label>
-					<label for="age"
-						>Age:
-						<input type="number" name="age" id="form-create-age" placeholder="Insert Age" />
-					</label>
-					<label for="gender"
-						>Gender:
-						<input type="text" name="gender" id="form-create-gender" placeholder="Gender" />
-					</label>
-					<label for="role"
-						>Role:
-						<input type="text" name="role" id="form-create-role" placeholder="Role" />
-					</label>
-					<label for="mail"
-						>Mail:
-						<input type="text" name="mail" id="form-create-mail" placeholder="Mail" />
-					</label>
-					<label for="team"
-						>Team:
-						<input type="text" name="team" id="form-create-team" placeholder="Team" />
-					</label>
-					<label for="city"
-						>City:
-						<input type="text" name="city" id="form-create-city" placeholder="City" />
-					</label>
-					<label for="meal"
-						>Favorite Meal:
-						<input type="text" name="meal" id="form-create-meal" placeholder="Favorite Meal" />
-					</label>
-					<label for="fun_fact"
-						>Fun Fact:
-						<input type="text" name="fun_fact" id="form-create-fun_fact" placeholder="Fun Fact" />
-					</label>
-				</section>
-				<section id="form-create-operatingSystem-section">
-					<h2>Operating System</h2>
-					<label for="operatingSystemWindows"
-						>Windows:
-						<input type="radio" name="operatingSystem" id="form-create-operatingSystemWindows" />
-					</label>
-					<label for="operatingSystemMac"
-						>Mac:
-						<input type="radio" name="operatingSystem" id="form-create-operatingSystemMac" />
-					</label>
-					<label for="operatingSystemLinux"
-						>Linux:
-						<input type="radio" name="operatingSystem" id="form-create-operatingSystemLinux" />
-					</label>
-				</section>
-				<section id="form-create-pineapple-section">
-					<h2>Pinapple on pizza:</h2>
-					<label for="pineappleYes"
-						>Yes
-						<input type="radio" name="pineapple" id="form-create-pineappleYes" value="Yes" />
-					</label>
-					<label for="pineappleNo"
-						>No
-						<input type="radio" name="pineapple" id="form-create-pineappleNo" value="No" selected />
-					</label>
+				<section class="form-create-user-grid">
+					<section id="form-create-user-info">
+						<label for="name"
+							>Name:
+							<input type="text" name="name" id="form-create-name" placeholder="Enter name" />
+						</label>
+						<label for="image"
+							>Image:
+							<input type="url" name="image" id="form-create-image" placeholder="Enter image URL" />
+						</label>
+						<label for="age"
+							>Age:
+							<input type="number" name="age" id="form-create-age" placeholder="Enter age" />
+						</label>
+						<label for="gender"
+							>Gender:
+							<input type="text" name="gender" id="form-create-gender" placeholder="Enter gender" />
+						</label>
+						<label for="role_select"
+							>Role:
+							<select id="role_select">
+								<option value="" disabled selected>Choose here</option>
+								<option value="Student">Student</option>
+								<option value="Lecturer">Lecturer</option>
+								<option value="Creator">Creator</option>
+							</select>
+						</label>
+						<label for="mail"
+							>Mail:
+							<input type="text" name="mail" id="form-create-mail" placeholder="Enter mail" />
+						</label>
+						<label for="team_select"
+							>Team:
+							<select id="team_select">
+								<option value="" disabled selected>Choose here</option>
+								<option value="V1">V1</option>
+								<option value="V2">V2</option>
+							</select>
+						</label>
+						<label for="city"
+							>City:
+							<input type="text" name="city" id="form-create-city" placeholder="Enter city" />
+						</label>
+						<label for="meal"
+							>Favorite Meal:
+							<input type="text" name="meal" id="form-create-meal" placeholder="Favorite Meal" />
+						</label>
+						<label for="fun_fact"
+							>Fun Fact:
+							<input type="text" name="fun_fact" id="form-create-fun_fact" placeholder="Fun Fact" />
+						</label>
+					</section>
+					<section id="form-create-options-section">
+						<h2>Operating System</h2>
+						<label for="operatingSystemWindows"
+							>Windows:
+							<input type="radio" name="operatingSystem" id="form-create-operatingSystemWindows" value="Windows" selected />
+						</label>
+						<label for="operatingSystemMac"
+							>Mac:
+							<input type="radio" name="operatingSystem" id="form-create-operatingSystemMac" value="Mac" />
+						</label>
+						<label for="operatingSystemLinux"
+							>Linux:
+							<input type="radio" name="operatingSystem" id="form-create-operatingSystemLinux" value="Linux" />
+						</label>
+						<h2>Pinapple on pizza:</h2>
+						<label for="pineappleYes"
+							>Yes
+							<input type="radio" name="pineapple" id="form-create-pineappleYes" value="Yes" />
+						</label>
+						<label for="pineappleNo"
+							>No
+							<input type="radio" name="pineapple" id="form-create-pineappleNo" value="No" selected />
+						</label>
+					</section>
 				</section>
 				<section id="form-create-btns">
-					<input type="submit" name="submit-btn" id="submit-btn" value="Create user" />
-					<input type="reset" name="reset-btn" id="reset-btn" value="Reset form" />
+					<input type="submit" name="submit-btn" class="input-btns-styling" id="submit-btn" value="Create user" />
+					<input type="reset" name="reset-btn" class="input-btns-styling" id="reset-btn" value="Reset form" />
 				</section>
 			</form>
 		</dialog>
