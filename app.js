@@ -25,7 +25,7 @@ function createUserClicked(event) {
 	const name = form.name.value;
 	const image = form.image.value;
 	const age = form.age.value;
-	const gender = form.gender.value;
+	const gender = form.gender_select.value;
 	const role = form.role_select.value;
 	const mail = form.mail.value;
 	const team = form.team_select.value;

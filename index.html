@@ -48,7 +48,11 @@
 						</label>
 						<label for="gender"
 							>Gender:
-							<input type="text" name="gender" id="form-create-gender" placeholder="Enter gender" />
+							<select id="gender_select">
+								<option value="male">Male</option>
+								<option value="female">Female</option>
+								<option value="other">Other</option>
+							</select>
 						</label>
 						<label for="role_select"
 							>Role:
@@ -118,7 +122,7 @@
 		<dialog id="dialog-delete-user">
 			<h2>Are you sure you want to delete?</h2>
 			<p id="dialog-delete-user-title"></p>
-			<form id="form-delete-user">
+			<form method="dialog" id="form-delete-user">
 				<button>YES</button>
 				<button type="button">NO</button>
 			</form>
