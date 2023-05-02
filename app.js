@@ -127,19 +127,19 @@ function displayUser(user) {
 	`
 	);
 
-	document.querySelector("#users article:last-child .btn-delete").addEventListener("click", deleteClicked);
-	document.querySelector("#users article:last-child .btn-update").addEventListener("click", updateClicked);
+	document.querySelector("#users article:last-child .btn-delete").addEventListener("click", () => deleteClicked(user));
+	document.querySelector("#users article:last-child .btn-update").addEventListener("click", () => updateClicked(user));
+}
 
-	function deleteClicked() {
-		console.log("Delete button clicked");
-		document.querySelector("#dialog-delete-user-title").textContent = user.name;
-		document.querySelector("#form-delete-user").setAttribute("data-id", user.id);
-		document.querySelector("#dialog-delete-user").showModal();
-	}
+function deleteClicked(user) {
+	console.log("Delete button clicked");
+	document.querySelector("#dialog-delete-user-title").textContent = user.name;
+	document.querySelector("#form-delete-user").setAttribute("data-id", user.id);
+	document.querySelector("#dialog-delete-user").showModal();
+}
 
-	function updateClicked() {
-		console.log("Update button clicked");
-	}
+function updateClicked(user) {
+	console.log("Update button clicked");
 }
 
 function deleteUserClicked(event) {
