@@ -129,6 +129,25 @@ function displayUser(user) {
 
 	document.querySelector("#users article:last-child .btn-delete").addEventListener("click", () => deleteClicked(user));
 	document.querySelector("#users article:last-child .btn-update").addEventListener("click", () => updateClicked(user));
+	document.querySelector("#users article:last-child").addEventListener("click", () => detailViewClicked(user));
+	// function detailViewClicked(){
+	// 	showDetailView(user)
+	// }
+}
+function detailViewClicked(user) {
+	document.querySelector("#detail-view-image").src = user.image;
+	document.querySelector("#detail-view-name").textContent = user.name;
+	document.querySelector("#detail-view-city").textContent = user.city;
+	document.querySelector("#detail-view-team").textContent = user.team;
+	document.querySelector("#detail-view-operatingSystem").textContent = user.operatingSystem;
+	document.querySelector("#detail-view-funFact").textContent = user.fun_fact;
+	document.querySelector("#detail-view-favoriteMeal").textContent = user.meal;
+	document.querySelector("#detail-view-pineapple").textContent = user.pineapple;
+	document.querySelector("#detail-view-gender").textContent = user.gender;
+	document.querySelector("#detail-view-mail").textContent = user.mail;
+	document.querySelector("#detail-view-age").textContent = user.age;
+	document.querySelector("#detail-view-role").textContent = user.role;
+	document.querySelector("#dialog-detail-view").showModal();
 }
 
 function deleteClicked(user) {
