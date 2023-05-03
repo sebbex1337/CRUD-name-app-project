@@ -138,6 +138,81 @@
 				<button type="button">NO</button>
 			</form>
 		</dialog>
+		<dialog id="dialog-update-user" method="dialog">
+			<h2>Update user</h2>
+			<form id="form-update-user">
+				<section class="form-update-user-grid">
+					<section id="form-update-user-info">
+				<label for="name-update">Name</label>
+					<input type="text" id="name-update" name="name" placeholder="Type a new name">
+				<label for="image-update">Image</label>
+					<input type="url" id="image-update" name="image" placeholder="Insert a new url">
+				<label for="age-update">Age</label>
+					<input type=number id="age-update" name="age" placeholder="Change your age">
+				<label for="gender_update"
+					>Gender:
+					<select id="gender_update">
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+						<option value="other">Other</option>
+					</select>
+				</label>
+				<label for="role_update"
+							>Role:
+							<select id="role_update">
+								<option value="" disabled selected>Choose here</option>
+								<option value="Student">Student</option>
+								<option value="Lecturer">Lecturer</option>
+								<option value="Creator">Creator</option>
+							</select>
+						</label>
+				<label for="mail-update">E-mail</label>
+					<input type="text" id="mail-update" name="mail" placeholder="Type a new E-mail">
+					<label for="team_update"
+					>Team:
+					<select id="team_update">
+						<option value="" disabled selected>Choose here</option>
+						<option value="V1">V1</option>
+						<option value="V2">V2</option>
+					</select>
+				</label>
+				<label for="city-update">City</label>
+					<input type="text" id="city-update" name="city" placeholder="Type your new city">
+				<label for="meal-update">Favorite Meal</label>
+					<input type="text" id="meal-update" name="meal" placeholder="Type your new favorite meal">
+				<label for="fact-update">Fun Fact</label>
+					<input type="text" id="fact-update" name="fact" placeholder="Type a new fun fact">
+				</section>
+				<section id="form-update-options">
+					<label for="operatingSystemWindows"
+					>Windows:
+					<input type="radio" name="operatingSystem" id="form-update-operatingSystemWindows" value="Windows" selected />
+				</label>
+				<label for="operatingSystemMac"
+					>Mac:
+					<input type="radio" name="operatingSystem" id="form-update-operatingSystemMac" value="Mac" />
+				</label>
+				<label for="operatingSystemLinux"
+					>Linux:
+					<input type="radio" name="operatingSystem" id="form-update-operatingSystemLinux" value="Linux" />
+				</label>
+				<h2>Pinapple on pizza:</h2>
+				<label for="pineappleYes"
+					>Yes
+					<input type="radio" name="pineapple" id="form-update-pineappleYes" value="Yes" />
+				</label>
+				<label for="pineappleNo"
+					>No
+					<input type="radio" name="pineapple" id="form-update-pineappleNo" value="No" selected />
+				</label>
+				</section>
+				</section>
+				<section id="form-update-btns">
+						<input type="submit" name="submit-btn" class="input-btns-styling" id="submit-btn" value="Update user" />
+						<input type="button" name="cancel-btn" class="input-btns-styling" id="cancel-btn" value="Cancel" />
+					</section>
+			</form>
+		</dialog>
 
 		<script src="app.js"></script>
 	</body>

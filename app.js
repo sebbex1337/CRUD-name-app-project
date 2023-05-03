@@ -10,6 +10,7 @@ function initApp() {
 
 	document.querySelector("#createUser").addEventListener("click", showCreateUserDialog);
 	document.querySelector("#form-delete-user").addEventListener("submit", deleteUserClicked);
+	document.querySelector("#form-update-user").addEventListener("submit", updateUserClicked);
 	document.querySelector("#sort-by").addEventListener("change", sortByChanged);
 	document.querySelector("#filter-by").addEventListener("change", filterByChanged);
 }
@@ -139,7 +140,43 @@ function deleteClicked(user) {
 }
 
 function updateClicked(user) {
-	console.log("Update button clicked");
+	const updateForm = document.querySelector("#form-update-user");
+	updateForm.name.value = user.name;
+	updateForm.image.value = user.image;
+	updateForm.age.value = user.age;
+	updateForm.gender_update.value = user.gender;
+	updateForm.role_update.value = user.role;
+	updateForm.mail.value = user.mail;
+	updateForm.team_update.value = user.team;
+	updateForm.city.value = user.city;
+	updateForm.meal.value = user.meal;
+	updateForm.fact.value = user.fact;
+	updateForm.operatingSystem.value = user.operatingSystem;
+	updateForm.pineapple.value = user.pineapple;
+
+	updateForm.setAttribute("data-id", user.id);
+    document.querySelector("#dialog-update-user").showModal();
+}
+function updateUserClicked(event) {
+	event.preventDefault();
+	const form = event.target;
+	const name = form.name.value
+	const image = form.image.value
+	const age  = form.age.value
+	const gender = form.gender_update.value
+	const role = form.role_update.value
+	const mail = form.mail.value
+	const city = form.city.value
+	const team = form.team_update.value
+	const meal = form.meal.value
+	const fun_fact = form.fact.value
+	const operatingSystem = form.operatingSystem.value
+	const pineapple = form.pineapple.value
+
+	const id = form.getAttribute("data-id")
+	updateUser(id, image, name, age, gender, role, mail, team, city, meal, fun_fact, operatingSystem, pineapple);
+	document.querySelector("#dialog-update-user").close();
+	
 }
 
 function deleteUserClicked(event) {
