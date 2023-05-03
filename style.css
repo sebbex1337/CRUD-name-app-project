@@ -231,7 +231,7 @@ form h2 {
 }
 #dialog-detail-view {
 	width: 65vw;
-	background-color: rgb(0, 137, 211);
+	background-color: #72639a;
 }
 
 /*update user dialog*/
@@ -308,4 +308,7 @@ form h2 {
 #dialog-detail-view form {
 	padding: 1em;
 	text-align: center;
+}
+#dialog-close-button{
+	border-radius: 16px;
 }
