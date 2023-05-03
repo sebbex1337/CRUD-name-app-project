@@ -5,7 +5,7 @@ body {
 }
 
 header {
-	background-color: rgb(0, 117, 108);
+	background-color: #8cdb80;
 	padding: 0.5em 0 0.5em 0;
 	text-align: center;
 }
@@ -19,13 +19,13 @@ h2 {
 }
 
 footer {
-	background-color: rgb(0, 117, 108);
+	background-color: #8cdb80;
 	padding: 1em 0 1em 0;
 	text-align: center;
 }
 
 main {
-	background-color: rgb(212, 212, 212);
+	background-color: white;
 }
 
 button {
@@ -52,7 +52,7 @@ button {
 .tools-grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	background-color: rgb(0, 133, 71);
+	background-color: #ff4979;
 	padding: 0.5em;
 	gap: 1em;
 }
@@ -102,6 +102,13 @@ button {
 .grid-item {
 	background-color: rgb(158, 53, 53);
 	padding: 1em;
+	background-image: url(img/create_user_background.jpg);
+	background-size: cover;
+}
+
+.transparent-user {
+	background: rgba(196, 196, 196, 0.8);
+	border-radius: 16px;
 }
 
 .grid-item:hover {
@@ -123,6 +130,19 @@ button {
 .grid-item h2 {
 	padding-left: 0.3em;
 	text-align: center;
+}
+
+.btn-delete {
+	background-color: #ff564f;
+	color: white;
+	border-radius: 16px;
+	margin-bottom: 0.1em;
+}
+
+.btn-update {
+	background-color: #ffd215;
+	color: black;
+	border-radius: 16px;
 }
 
 /* Dialog create user */

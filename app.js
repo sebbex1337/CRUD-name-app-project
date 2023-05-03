@@ -166,10 +166,12 @@ function displayUser(user) {
 		/*html*/ `
 		<article class="grid-item">
 			<img src="${user.image}">
-			<h2>${user.name}</h2>
-			<p>Age: ${user.age}</p>
-			<p>Mail: ${user.mail}</p>
-			<p>Team: ${user.team}</p>
+			<section class="transparent-user">
+				<h2>${user.name}</h2>
+				<p>Age: ${user.age}</p>
+				<p>Mail: ${user.mail}</p>
+				<p>Team: ${user.team}</p>
+			</section>
 			<section class="btns">
 				<button class="btn-delete">Delete</button>
 				<button class="btn-update">Update</button>
@@ -233,7 +235,11 @@ function sortByChanged(event) {
 }
 
 function filterUsers(filterBy) {
-	return users.filter((user) => user.team === filterBy);
+	if (filterBy === "") {
+		return users;
+	} else {
+		return users.filter((user) => user.team === filterBy);
+	}
 }
 
 function filterByChanged(event) {
