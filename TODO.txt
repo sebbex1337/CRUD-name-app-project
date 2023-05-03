@@ -1,6 +1,0 @@
-TODO:
-
-søge funktion
-
-dialog box til update
-dialog box til detail view

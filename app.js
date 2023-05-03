@@ -12,9 +12,17 @@ function initApp() {
 	document.querySelector("#form-delete-user").addEventListener("submit", deleteUserClicked);
 	document.querySelector("#sort-by").addEventListener("change", sortByChanged);
 	document.querySelector("#filter-by").addEventListener("change", filterByChanged);
+	document.querySelector("#input-search").addEventListener("keyup", inputSearchChanged);
+	document.querySelector("#input-search").addEventListener("search", inputSearchChanged);
 }
 
 /* Event functions */
+
+function inputSearchChanged(event) {
+	const value = event.target.value;
+	const userToSearch = searchUser(value);
+	displayUsers(userToSearch);
+}
 
 function showCreateUserDialog() {
 	document.querySelector("#dialog-create-user").showModal();
@@ -177,4 +185,9 @@ function filterUsers(filterBy) {
 function filterByChanged(event) {
 	const selectedValue = event.target.value;
 	displayUsers(filterUsers(selectedValue));
+}
+
+function searchUser(searchValue) {
+	searchValue = searchValue.toLowerCase();
+	return users.filter((user) => user.name.toLowerCase().includes(searchValue));
 }
