@@ -195,3 +195,21 @@ form h2 {
 #form-create-options-section {
 	margin-left: 3em;
 }
+.dialog-grid img {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+.dialog-grid article {
+	max-width: 400px;
+}
+
+.dialog-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1em;
+}
+#dialog-detail-view {
+	width: 65vw;
+	background-color: rgb(0, 137, 211);
+}
