@@ -138,9 +138,6 @@ function displayUser(user) {
 	document.querySelector("#users article:last-child .btn-delete").addEventListener("click", () => deleteClicked(user));
 	document.querySelector("#users article:last-child .btn-update").addEventListener("click", () => updateClicked(user));
 	document.querySelector("#users article:last-child").addEventListener("click", () => detailViewClicked(user));
-	// function detailViewClicked(){
-	// 	showDetailView(user)
-	// }
 }
 function detailViewClicked(user) {
 	document.querySelector("#detail-view-image").src = user.image;
