@@ -50,6 +50,48 @@ function createUserClicked(event) {
 	document.querySelector("#dialog-create-user").close();
 }
 
+function updateUserClicked(event) {
+	event.preventDefault();
+	const form = event.target;
+	const name = form.name.value;
+	const image = form.image.value;
+	const age = form.age.value;
+	const gender = form.gender_update.value;
+	const role = form.role_update.value;
+	const mail = form.mail.value;
+	const city = form.city.value;
+	const team = form.team_update.value;
+	const meal = form.meal.value;
+	const fun_fact = form.fact.value;
+	const operatingSystem = form.operatingSystem.value;
+	const pineapple = form.pineapple.value;
+
+	const id = form.getAttribute("data-id");
+	updateUser(id, image, name, age, gender, role, mail, team, city, meal, fun_fact, operatingSystem, pineapple);
+	document.querySelector("#dialog-update-user").close();
+}
+
+function deleteUserClicked(event) {
+	const id = event.target.getAttribute("data-id");
+	deleteUser(id);
+}
+
+function detailViewClicked(user) {
+	document.querySelector("#detail-view-image").src = user.image;
+	document.querySelector("#detail-view-name").textContent = user.name;
+	document.querySelector("#detail-view-city").textContent = user.city;
+	document.querySelector("#detail-view-team").textContent = user.team;
+	document.querySelector("#detail-view-operatingSystem").textContent = user.operatingSystem;
+	document.querySelector("#detail-view-funFact").textContent = user.fun_fact;
+	document.querySelector("#detail-view-favoriteMeal").textContent = user.meal;
+	document.querySelector("#detail-view-pineapple").textContent = user.pineapple;
+	document.querySelector("#detail-view-gender").textContent = user.gender;
+	document.querySelector("#detail-view-mail").textContent = user.mail;
+	document.querySelector("#detail-view-age").textContent = user.age;
+	document.querySelector("#detail-view-role").textContent = user.role;
+	document.querySelector("#dialog-detail-view").showModal();
+}
+
 /* Get users functions */
 
 async function updateUsersGrid() {
@@ -138,22 +180,7 @@ function displayUser(user) {
 
 	document.querySelector("#users article:last-child .btn-delete").addEventListener("click", () => deleteClicked(user));
 	document.querySelector("#users article:last-child .btn-update").addEventListener("click", () => updateClicked(user));
-	document.querySelector("#users article:last-child").addEventListener("click", () => detailViewClicked(user));
-}
-function detailViewClicked(user) {
-	document.querySelector("#detail-view-image").src = user.image;
-	document.querySelector("#detail-view-name").textContent = user.name;
-	document.querySelector("#detail-view-city").textContent = user.city;
-	document.querySelector("#detail-view-team").textContent = user.team;
-	document.querySelector("#detail-view-operatingSystem").textContent = user.operatingSystem;
-	document.querySelector("#detail-view-funFact").textContent = user.fun_fact;
-	document.querySelector("#detail-view-favoriteMeal").textContent = user.meal;
-	document.querySelector("#detail-view-pineapple").textContent = user.pineapple;
-	document.querySelector("#detail-view-gender").textContent = user.gender;
-	document.querySelector("#detail-view-mail").textContent = user.mail;
-	document.querySelector("#detail-view-age").textContent = user.age;
-	document.querySelector("#detail-view-role").textContent = user.role;
-	document.querySelector("#dialog-detail-view").showModal();
+	document.querySelector("#users article:last-child img").addEventListener("click", () => detailViewClicked(user));
 }
 
 function deleteClicked(user) {
@@ -179,33 +206,7 @@ function updateClicked(user) {
 	updateForm.pineapple.value = user.pineapple;
 
 	updateForm.setAttribute("data-id", user.id);
-    document.querySelector("#dialog-update-user").showModal();
-}
-function updateUserClicked(event) {
-	event.preventDefault();
-	const form = event.target;
-	const name = form.name.value
-	const image = form.image.value
-	const age  = form.age.value
-	const gender = form.gender_update.value
-	const role = form.role_update.value
-	const mail = form.mail.value
-	const city = form.city.value
-	const team = form.team_update.value
-	const meal = form.meal.value
-	const fun_fact = form.fact.value
-	const operatingSystem = form.operatingSystem.value
-	const pineapple = form.pineapple.value
-
-	const id = form.getAttribute("data-id")
-	updateUser(id, image, name, age, gender, role, mail, team, city, meal, fun_fact, operatingSystem, pineapple);
-	document.querySelector("#dialog-update-user").close();
-	
-}
-
-function deleteUserClicked(event) {
-	const id = event.target.getAttribute("data-id");
-	deleteUser(id);
+	document.querySelector("#dialog-update-user").showModal();
 }
 
 //sortering//

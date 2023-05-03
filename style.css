@@ -284,3 +284,8 @@ form h2 {
 #form-update-options {
 	margin-left: 3em;
 }
+
+#dialog-detail-view form {
+	padding: 1em;
+	text-align: center;
+}
