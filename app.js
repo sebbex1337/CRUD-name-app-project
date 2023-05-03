@@ -1,8 +1,6 @@
-"use strict";
+import { getUsers, deleteUser, updateUser, createUser } from "./http.js";
 
 window.addEventListener("load", initApp);
-
-const ENDPOINT = "https://crud-app-group-project-default-rtdb.europe-west1.firebasedatabase.app/";
 let users;
 
 function initApp() {
@@ -30,7 +28,7 @@ function showCreateUserDialog() {
 	document.querySelector("#form-create-new-user").addEventListener("submit", createUserClicked);
 }
 
-function createUserClicked(event) {
+async function createUserClicked(event) {
 	event.preventDefault();
 	const form = this;
 	const name = form.name.value;
@@ -45,12 +43,15 @@ function createUserClicked(event) {
 	const fun_fact = form.fun_fact.value;
 	const operatingSystem = form.operatingSystem.value;
 	const pineapple = form.pineapple.value;
-	createUser(image, name, age, gender, role, mail, team, city, meal, fun_fact, operatingSystem, pineapple);
-	form.reset();
-	document.querySelector("#dialog-create-user").close();
+	const response = await createUser(image, name, age, gender, role, mail, team, city, meal, fun_fact, operatingSystem, pineapple);
+	if (response.ok) {
+		form.reset();
+		document.querySelector("#dialog-create-user").close();
+		updateUsersGrid();
+	}
 }
 
-function updateUserClicked(event) {
+async function updateUserClicked(event) {
 	event.preventDefault();
 	const form = event.target;
 	const name = form.name.value;
@@ -65,15 +66,20 @@ function updateUserClicked(event) {
 	const fun_fact = form.fact.value;
 	const operatingSystem = form.operatingSystem.value;
 	const pineapple = form.pineapple.value;
-
 	const id = form.getAttribute("data-id");
-	updateUser(id, image, name, age, gender, role, mail, team, city, meal, fun_fact, operatingSystem, pineapple);
-	document.querySelector("#dialog-update-user").close();
+	const response = await updateUser(id, image, name, age, gender, role, mail, team, city, meal, fun_fact, operatingSystem, pineapple);
+	if (response.ok) {
+		updateUsersgrid();
+		document.querySelector("#dialog-update-user").close();
+	}
 }
 
-function deleteUserClicked(event) {
+async function deleteUserClicked(event) {
 	const id = event.target.getAttribute("data-id");
-	deleteUser(id);
+	const response = await deleteUser(id);
+	if (response.ok) {
+		updateUsersGrid();
+	}
 }
 
 function detailViewClicked(user) {
@@ -95,59 +101,8 @@ function detailViewClicked(user) {
 /* Get users functions */
 
 async function updateUsersGrid() {
-	users = await getUsers(`${ENDPOINT}/users.json`);
+	users = await getUsers();
 	displayUsers(users);
-}
-
-async function getUsers(url) {
-	const response = await fetch(url);
-	const data = await response.json();
-	const users = prepareUsersData(data);
-	return users;
-}
-
-function prepareUsersData(dataObject) {
-	const newData = [];
-	for (const key in dataObject) {
-		const user = dataObject[key];
-		user.id = key;
-		newData.push(user);
-	}
-	return newData;
-}
-
-/* CRUD functions */
-
-async function createUser(image, name, age, gender, role, mail, team, city, meal, fun_fact, operatingSystem, pineapple) {
-	const newUser = { image, name, age, gender, role, mail, team, city, meal, fun_fact, operatingSystem, pineapple };
-	const userAsJson = JSON.stringify(newUser);
-	const response = await fetch(`${ENDPOINT}/users.json`, {
-		method: "POST",
-		body: userAsJson,
-	});
-	if (response.ok) {
-		updateUsersGrid();
-	}
-}
-
-async function updateUser(id, image, name, age, gender, role, mail, team, city, meal, fun_fact, operatingSystem, pineapple) {
-	const userToUpdate = { image, name, age, gender, role, mail, team, city, meal, fun_fact, operatingSystem, pineapple };
-	const userAsJson = JSON.stringify(userToUpdate);
-	const response = await fetch(`${ENDPOINT}/users/${id}.json`, {
-		method: "PUT",
-		body: userAsJson,
-	});
-	if (response.ok) {
-		updateUsersGrid();
-	}
-}
-
-async function deleteUser(id) {
-	const response = await fetch(`${ENDPOINT}/users/${id}.json`, { method: "DELETE" });
-	console.log(response);
-	if (response.ok) {
-		updateUsersGrid();
-	}
 }
 
 /* UI functions */
