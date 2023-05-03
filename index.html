@@ -23,7 +23,7 @@
 					<option value="team">Team</option>
 				</select>
 			</label>
-			<label for="filter-by">
+			<label for="filter-by" id="filter-by-label">
 				Filter by:
 				<select id="filter-by">
 					<option value="" selected>No filter</option>
@@ -31,7 +31,10 @@
 					<option value="V2">V2</option>
 				</select>
 			</label>
-			<input id="search" type="search" placeholder="Search" />
+			<div>
+				<label for="input-search">Search: </label>
+				<input id="input-search" type="search" placeholder="Search by name" />
+			</div>
 		</section>
 		<main>
 			<section id="users" class="grid-container"></section>

@@ -40,9 +40,38 @@ button {
 	max-width: 380px;
 }
 
-#sort-by-label {
-	margin: 1em 0 1em 6em;
+.tools-grid select {
+	border: 2px solid black;
+	padding: 1em;
+	margin: 1em;
+	width: 100%;
+	max-width: 350px;
 }
+
+/* Tools bar styling */
+.tools-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	background-color: rgb(0, 133, 71);
+	padding: 0.5em;
+	gap: 1em;
+}
+
+#input-search {
+	margin: 1em auto;
+	width: 100%;
+	max-width: 350px;
+	padding: 1em;
+	border: 2px solid black;
+}
+
+/* #sort-by-label {
+	margin: 1.5em 0 1.5em 6em;
+}
+
+#filter-by-label {
+	margin: 1.5em 0 1.5em 10em;
+} */
 
 /* Grid styling on main */
 .grid-container {
@@ -94,14 +123,6 @@ button {
 .grid-item h2 {
 	padding-left: 0.3em;
 	text-align: center;
-}
-
-.tools-grid {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	background-color: rgb(0, 133, 71);
-	padding: 1em 0.5em 1em 0.5em;
-	gap: 1em;
 }
 
 /* Dialog styling */
