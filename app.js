@@ -158,7 +158,7 @@ function updateClicked(user) {
 	updateForm.team_update.value = user.team;
 	updateForm.city.value = user.city;
 	updateForm.meal.value = user.meal;
-	updateForm.fact.value = user.fact;
+	updateForm.fact.value = user.fun_fact;
 	updateForm.operatingSystem.value = user.operatingSystem;
 	updateForm.pineapple.value = user.pineapple;
 
