@@ -40,6 +40,10 @@ button {
 	max-width: 380px;
 }
 
+#users {
+	text-align: center;
+}
+
 .tools-grid select {
 	border: 2px solid black;
 	padding: 1em;
@@ -309,6 +313,6 @@ form h2 {
 	padding: 1em;
 	text-align: center;
 }
-#dialog-close-button{
+#dialog-close-button {
 	border-radius: 16px;
 }

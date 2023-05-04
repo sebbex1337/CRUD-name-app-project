@@ -113,8 +113,12 @@ async function updateUsersGrid() {
 function displayUsers(listOfUsers) {
 	document.querySelector("#users").innerHTML = ""; // Reset users list in html
 
-	for (const user of listOfUsers) {
-		displayUser(user);
+	if (listOfUsers.length !== 0) {
+		for (const user of listOfUsers) {
+			displayUser(user);
+		}
+	} else {
+		document.querySelector("#users").innerHTML = "Sorry! No users were found";
 	}
 }
 
@@ -188,15 +192,27 @@ function sortUsers(sortBy) {
 
 function sortByChanged(event) {
 	const selectedValue = event.target.value;
-	console.log(selectedValue);
 	displayUsers(sortUsers(selectedValue));
 }
 
 function filterUsers(filterBy) {
-	if (filterBy === "") {
-		return users;
-	} else {
-		return users.filter((user) => user.team === filterBy);
+	switch (filterBy) {
+		case "":
+			return users;
+		case "V1":
+			return users.filter((user) => user.team === filterBy);
+		case "V2":
+			return users.filter((user) => user.team === filterBy);
+		case "Yes":
+			return users.filter((user) => user.pineapple === filterBy);
+		case "No":
+			return users.filter((user) => user.pineapple === filterBy);
+		case "Windows":
+			return users.filter((user) => user.operatingSystem === filterBy);
+		case "Mac":
+			return users.filter((user) => user.operatingSystem === filterBy);
+		case "Linux":
+			return users.filter((user) => user.operatingSystem === filterBy);
 	}
 }
 
