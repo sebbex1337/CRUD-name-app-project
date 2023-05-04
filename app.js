@@ -45,6 +45,7 @@ async function createUserClicked(event) {
 	const pineapple = form.pineapple.value;
 	const response = await createUser(image, name, age, gender, role, mail, team, city, meal, fun_fact, operatingSystem, pineapple);
 	if (response.ok) {
+		console.log("User added to Firebase!");
 		form.reset();
 		document.querySelector("#dialog-create-user").close();
 		updateUsersGrid();
@@ -69,6 +70,7 @@ async function updateUserClicked(event) {
 	const id = form.getAttribute("data-id");
 	const response = await updateUser(id, image, name, age, gender, role, mail, team, city, meal, fun_fact, operatingSystem, pineapple);
 	if (response.ok) {
+		console.log("User updated to Firebase");
 		updateUsersGrid();
 		document.querySelector("#dialog-update-user").close();
 	}
@@ -78,6 +80,7 @@ async function deleteUserClicked(event) {
 	const id = event.target.getAttribute("data-id");
 	const response = await deleteUser(id);
 	if (response.ok) {
+		console.log("User deleted from Firebase");
 		updateUsersGrid();
 	}
 }
