@@ -69,7 +69,7 @@ async function updateUserClicked(event) {
 	const id = form.getAttribute("data-id");
 	const response = await updateUser(id, image, name, age, gender, role, mail, team, city, meal, fun_fact, operatingSystem, pineapple);
 	if (response.ok) {
-		updateUsersgrid();
+		updateUsersGrid();
 		document.querySelector("#dialog-update-user").close();
 	}
 }
