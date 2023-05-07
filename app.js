@@ -49,6 +49,7 @@ async function createUserClicked(event) {
 		form.reset();
 		document.querySelector("#dialog-create-user").close();
 		updateUsersGrid();
+		showPrompt("User added to Firebase!");
 	}
 }
 
@@ -70,9 +71,10 @@ async function updateUserClicked(event) {
 	const id = form.getAttribute("data-id");
 	const response = await updateUser(id, image, name, age, gender, role, mail, team, city, meal, fun_fact, operatingSystem, pineapple);
 	if (response.ok) {
-		console.log("User updated to Firebase");
+		console.log("User updated to Firebase!");
 		updateUsersGrid();
 		document.querySelector("#dialog-update-user").close();
+		showPrompt("User updated to Firebase!");
 	}
 }
 
@@ -80,8 +82,9 @@ async function deleteUserClicked(event) {
 	const id = event.target.getAttribute("data-id");
 	const response = await deleteUser(id);
 	if (response.ok) {
-		console.log("User deleted from Firebase");
+		console.log("User deleted from Firebase!");
 		updateUsersGrid();
+		showPrompt("User deleted from Firebase!");
 	}
 }
 
@@ -152,6 +155,7 @@ function deleteClicked(user) {
 	document.querySelector("#dialog-delete-user-title").textContent = user.name;
 	document.querySelector("#form-delete-user").setAttribute("data-id", user.id);
 	document.querySelector("#dialog-delete-user").showModal();
+	document.querySelector("#form-delete-user-no").addEventListener("click", () => document.querySelector("#dialog-delete-user").close());
 }
 
 function updateClicked(user) {
@@ -171,6 +175,7 @@ function updateClicked(user) {
 
 	updateForm.setAttribute("data-id", user.id);
 	document.querySelector("#dialog-update-user").showModal();
+	document.querySelector("#cancel-btn").addEventListener("click", () => document.querySelector("#dialog-update-user").close());
 }
 
 //sortering//
@@ -224,4 +229,14 @@ function filterByChanged(event) {
 function searchUser(searchValue) {
 	searchValue = searchValue.toLowerCase();
 	return users.filter((user) => user.name.toLowerCase().includes(searchValue));
+}
+
+/* Prompt */
+
+function showPrompt(text) {
+	document.querySelector("#promptText").textContent = text;
+	document.querySelector("#prompt").showModal();
+	setTimeout(() => {
+		document.querySelector("#prompt").close();
+	}, 1900);
 }

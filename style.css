@@ -316,3 +316,28 @@ form h2 {
 #dialog-close-button {
 	border-radius: 16px;
 }
+
+/* Prompt styling */
+
+#prompt {
+	width: 20vw;
+	height: 10vh;
+	background-color: rgb(167, 167, 167);
+	text-align: center;
+	animation: show 2s;
+}
+
+@keyframes show {
+	0% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
